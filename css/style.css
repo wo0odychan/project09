@@ -1,0 +1,223 @@
+* {
+    outline: 1px solid tomato;
+}
+
+:root {
+    --line: #f2f2f2;
+    --wc: #ffffff;
+    --mc: #004597;
+    --pc: #ffcd81;
+    --bs: 60rem;
+
+}
+
+
+html {
+    font-size: 6.25%;
+}
+
+@media (max-width: 540px) {
+    html {
+        font-size: 0.25641025641vw;
+    }
+}
+
+body {
+    font-size: 16rem;
+    word-break: keep-all;
+}
+
+/* line-height : 3rem + 3rem */
+p {
+    line-height: 1.375;
+}
+
+
+.inner {
+    max-width: 1400rem;
+    margin: 0 auto;
+    padding: 0 15rem;
+}
+
+.sec {
+    position: relative;
+    padding: 80rem 0;
+}
+
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: var(--wc);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    white-space: nowrap;
+}
+
+.header.on {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.header .header_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100rem;
+
+}
+
+.header.on .header_wrap {
+    height: 70rem;
+}
+
+.header .gnb .main_menu {
+    display: flex;
+}
+
+.header .gnb .main_menu>li {
+    position: relative;
+    padding: 40rem 45rem;
+    font-size: 17rem;
+    font-weight: 500;
+}
+
+.header.on .gnb .main_menu>li {
+    font-size: 16rem;
+    padding: 27rem 45rem;
+}
+
+.header .sub_menu {
+    height: 0;
+    overflow: hidden;
+
+    position: absolute;
+    top: 90rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    z-index: 999;
+    width: 140rem;
+    line-height: 35rem;
+    transition: 0.4s;
+    margin: 10rem 0 0 0;
+}
+
+.header.on .sub_menu {
+    top: 60rem;
+}
+
+.header .gnb:hover>ul>li .sub_menu {
+    height: 398rem;
+
+}
+
+.header .sub_menu>li>a {
+    position: relative;
+    font-size: 15rem;
+    font-weight: 400;
+    color: #ffffff9f;
+}
+
+.header .sub_menu>li>a:hover {
+    color: var(--wc);
+}
+
+.header .sub_menu>li {
+    position: relative;
+
+}
+
+.header .sub_menu>li>a::before {
+    content: "";
+    position: absolute;
+    top: 45%;
+    left: 0;
+    margin: 0 0 0 -18rem;
+    height: 0;
+    width: 0;
+    background: var(--wc);
+    transition: 0.3s;
+}
+
+.header .sub_menu>li>a:hover::before {
+    height: 1px;
+    width: 13rem;
+}
+
+.header .gnb::before {
+    content: "";
+    position: absolute;
+    top: 100rem;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-top: 1xp solid transparent;
+
+    z-index: 999;
+
+    transition: 0.4s;
+}
+
+.header .gnb:hover::before {
+    height: 400rem;
+    background: #004497dc;
+}
+
+.header.on .gnb::before {
+    top: 70rem;
+}
+
+.header .login_area .member {
+    display: flex;
+    font-size: 15rem;
+}
+
+.header .login_area .member li {
+    padding: 0 10rem;
+}
+
+.header .login_area .member strong {
+    color: var(--mc);
+}
+
+.main_visual .main_slide .itm {
+    position: relative;
+    height: 730rem;
+}
+
+.main_visual .main_slide .itm01 {
+    background: url(../images/mainV01.jpg) no-repeat center center/cover;
+}
+
+.main_visual .main_slide .itm02 {
+    background: url(../images/mainV02.jpg) no-repeat center center/cover;
+}
+
+.main_visual .main_slide .itm03 {
+    background: url(../images/mainV03.jpg) no-repeat center center/cover;
+}
+
+.main_visual .main_slide .itm .slogan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--wc);
+    text-align: center;
+}
+
+.main_visual .main_slide .itm .slogan h2 {
+    font-size: 65rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 40rem 0;
+}
+
+.main_visual .main_slide .itm .slogan strong {
+    color: var(--pc);
+}
+
+.main_content {
+    height: 100vh;
+}
