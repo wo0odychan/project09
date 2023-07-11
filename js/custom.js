@@ -6,6 +6,17 @@ $(function () {
             : $('.header').removeClass('on');
     });
 
+    $(window).on('scroll', function () {
+        let sct = $(window).scrollTop();
+        $('._mv').each(function () {
+            if (sct + $(window).innerHeight() - 300 > $(this).offset().top) {
+                $(this).addClass('on')
+            } else {
+                $(this).removeClass('on')
+            }
+        })
+    })
+
     $('.mobile_btn').on('click', function () {
         $(this).toggleClass('on');
         $('.gnb').toggleClass('on');
