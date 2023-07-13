@@ -33,6 +33,18 @@ $(function () {
         arrows: false,
         dots: false,
         autoplay: true,
-        speed: 2000,
+        speed: 3000,
+        pauseOnHover: true,
+    });
+
+    $('.main_slide').on('init afterChange', function (e, s, c) {
+        $('.main_visual .menu li').eq(0).addClass('on');
+        $('.main_visual .menu li').eq(c).addClass('on').siblings().removeClass('on');
+    });
+
+    $('.main_visual .menu li').on('click', function (e) {
+        e.preventDefault();
+        const idx = $(this).index();
+        $('.main_slide').slick('slickGoTo', idx);
     });
 })
