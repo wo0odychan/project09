@@ -9,7 +9,7 @@ $(function () {
     $(window).on('scroll', function () {
         let sct = $(window).scrollTop();
         $('._mv').each(function () {
-            if (sct + $(window).innerHeight() - 300 > $(this).offset().top) {
+            if (sct + $(window).innerHeight() - 100 > $(this).offset().top) {
                 $(this).addClass('on')
             } else {
                 $(this).removeClass('on')
@@ -22,14 +22,17 @@ $(function () {
         $('.gnb').toggleClass('on');
 
     });
+
+
     $('.gnb').on('wheel touchmove', function (e) {
         e.preventDefault();
     });
 
+
     $('.main_slide').slick({
         arrows: false,
         dots: false,
-        autoplay: false,
+        autoplay: true,
         speed: 2000,
     });
 })
